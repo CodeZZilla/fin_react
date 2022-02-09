@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import DashboardOverview from "./components/DashboardOverview";
 import Footer from "./components/Footer";
 import {CounterWidget} from "./components/Widgets";
+import {PageTrafficTable} from "./components/Tables";
 
 const RouteWithLoader = ({ component: Component, ...rest }) => {
   const [loaded, setLoaded] = useState(false);
@@ -31,14 +32,14 @@ const RouteWithSidebar = ({ component: Component, ...rest }) => {
     }, []);
 
     const localStorageIsSettingsVisible = () => {
-        return false
+        return true
     }
 
     const [showSettings, setShowSettings] = useState(localStorageIsSettingsVisible);
 
     const toggleSettings = () => {
         setShowSettings(!showSettings);
-        localStorage.setItem('settingsVisible', !showSettings);
+        localStorage.setItem('settingsVisible',!showSettings);
     }
 
     return (
@@ -59,5 +60,6 @@ export default () => (
     <Switch>
         <RouteWithSidebar path={Routes.Navbars.path} component={DashboardOverview}/>
         <RouteWithSidebar path={Routes.DashboardOverview.path} component={CounterWidget}/>
+        <RouteWithSidebar path={Routes.Tables.path} component={PageTrafficTable}/>
     </Switch>
 );

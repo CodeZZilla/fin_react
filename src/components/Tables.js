@@ -9,6 +9,7 @@ import { Routes } from "../routes";
 import { pageVisits, pageTraffic, pageRanking } from "../data/tables";
 import transactions from "../data/transactions";
 import commands from "../data/commands";
+import SelectAndSearch from "./SeachAndSelect";
 
 const ValueChange = ({ value, suffix }) => {
   const valueIcon = value < 0 ? faAngleDown : faAngleUp;
@@ -72,6 +73,10 @@ export const PageVisitsTable = () => {
   );
 };
 
+let generateSelectValues = [
+    1,2,3,5,8,9,0,8
+]
+
 export const PageTrafficTable = () => {
   const TableRow = (props) => {
     const { id, source, sourceIcon, sourceIconColor, sourceType, category, rank, trafficShare, change } = props;
@@ -90,12 +95,12 @@ export const PageTrafficTable = () => {
         <td>{rank ? rank : "--"}</td>
         <td>
           <Row className="d-flex align-items-center">
-            <Col xs={12} xl={2} className="px-0">
-              <small className="fw-bold">{trafficShare}%</small>
-            </Col>
-            <Col xs={12} xl={10} className="px-0 px-xl-1">
-              <ProgressBar variant="primary" className="progress-lg mb-0" now={trafficShare} min={0} max={100} />
-            </Col>
+              <SelectAndSearch key="SpectaclePrescription"
+                               value={"fdfsdf"}
+                               id="r_sphere"
+                               disabled={false}
+                               options={generateSelectValues}
+              />
           </Row>
         </td>
         <td>

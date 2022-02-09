@@ -82,22 +82,22 @@ export default (props) => {
             </Form>
             <div style={{marginLeft: '20px'}}>
               <Dropdown className="btn-toolbar">
-                <Dropdown.Toggle as={Button} variant="primary" size="sm" className="me-2">
+                <Dropdown.Toggle as={Link} to={"/dashboard/overview"} variant="primary" size="sm" className="me-2">
                   <FontAwesomeIcon icon={faPlus} className="me-2" />Новий документ
                 </Dropdown.Toggle>
-                <Dropdown.Menu className="dashboard-dropdown dropdown-menu-left mt-2">
-                  <Dropdown.Item as={Link} to={"/dashboard/overview"} className="fw-bold" >
+                {/*<Dropdown.Menu className="dashboard-dropdown dropdown-menu-left mt-2">
+                  <Dropdown.Item as={Link} className="fw-bold" >
                     <FontAwesomeIcon icon={faTasks} className="me-2" /> Новий документ
                   </Dropdown.Item>
                   <Dropdown.Item className="fw-bold">
                     <FontAwesomeIcon icon={faCloudUploadAlt} className="me-2" /> Завантажити файл
                   </Dropdown.Item>
-                </Dropdown.Menu>
+                </Dropdown.Menu>*/}
               </Dropdown>
             </div>
           </div>
 
-          <Nav className="align-items-center">
+          {/*<Nav className="align-items-center">
             <Dropdown as={Nav.Item} onToggle={markNotificationsAsRead} >
               <Dropdown.Toggle as={Nav.Link} className="text-dark icon-notifications me-lg-3">
                 <span className="icon icon-sm">
@@ -150,7 +150,7 @@ export default (props) => {
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
-          </Nav>
+          </Nav>*/}
         </div>
       </Container>
     </Navbar>

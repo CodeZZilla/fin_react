@@ -23,6 +23,7 @@ import Profile1 from "../assets/img/team/profile-picture-1.jpg";
 import ProfileCover from "../assets/img/profile-cover.jpg";
 
 import teamMembers from "../data/teamMembers";
+import {Link, Redirect} from "react-router-dom";
 
 
 export const ProfileCardWidget = () => {
@@ -84,15 +85,20 @@ export const CounterWidget = (props) => {
     <Card border="light" className="shadow-sm">
       <Card.Body>
         <Row className="d-block d-xl-flex align-items-center justify-content-around">
-          <Col xs={12} xl={7} className="px-xl-0">
-            <div className="d-block d-xl-flex align-items-center justify-content-around" style={{height: "80vh"}}>
-              <Button variant="outline-primary" style={{height:"30vh",width:"40vw",borderRadius:"15px",margin:"20px"}} size="lg" className="me-1">
-                <FontAwesomeIcon icon={faFile} style={{height:"30%",width:"30%"}} />
-                <p style={{fontSize: "2.4rem", fontWeight: "800", marginTop: "7px"}}>Смерть</p>
+          <Col xs={12} xl={12} className="px-xl-0">
+            <div className="d-block d-xl-flex align-items-center justify-content-around" style={{height: "70vh"}}>
+              <Button as={Link} to="/components/tables" variant="outline-primary"
+                      style={{height:"30vh",width:"40vw",borderRadius:"15px",margin:"30px"}} size="lg" className="me-1">
+                <FontAwesomeIcon icon={faFile} style={{height:"30%",width:"30%",marginTop:"20px"}} />
+                <p style={{fontSize: "2.4rem", fontWeight: "800", marginTop: "10px"}}>Смерть</p>
               </Button>
-              <Button variant="outline-primary" style={{height:"30vh",width:"40vw",borderRadius:"15px",margin:"20px"}} size="lg" className="me-1">
-                <FontAwesomeIcon icon={faFile} style={{height:"30%",width:"30%"}} />
+              <Button as={Link} to="/components/tables" variant="outline-primary" style={{height:"30vh",width:"40vw",borderRadius:"15px",margin:"20px"}} size="lg" className="me-2">
+                <FontAwesomeIcon icon={faFile} style={{height:"30%",width:"30%",marginTop:"20px"}} />
                 <p style={{fontSize: "2.4rem", fontWeight: "800", marginTop: "7px"}}>Інвалідність</p>
+              </Button>
+              <Button as={Link} to="/components/tables" variant="outline-primary" style={{height:"30vh",width:"40vw",borderRadius:"15px",margin:"20px"}} size="lg" className="me-3">
+                <FontAwesomeIcon icon={faFile} style={{height:"30%",width:"30%",marginTop:"20px"}} />
+                <p style={{fontSize: "2.4rem", fontWeight: "800", marginTop: "7px"}}>Інше</p>
               </Button>
             </div>
           </Col>
